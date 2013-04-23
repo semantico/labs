@@ -1,0 +1,12 @@
+<article>
+  <h3>{% include post_item_title.html %}</h3>
+  {% if page.categories contains 'articles' %}
+    {% if page.abstract %}
+      <p>{{ page.abstract }}</p>
+    {% endif %}
+  {% endif %}
+  {% if page.categories contains 'talks' %}
+    {{ page.content }}
+  {% endif %}
+  <p><a href="{{ page.url }}">Read more</a></p>
+</article>

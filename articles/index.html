@@ -1,0 +1,11 @@
+---
+layout: category
+category_name: articles
+title: Articles
+---
+
+<div class="post-list">
+  {% for page in site.categories.articles  %}
+    {% include post_item.html %}
+  {% endfor %}
+</div>

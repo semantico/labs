@@ -1,0 +1,65 @@
+---
+layout: empty
+---
+<div class="container">
+  <div class="hero-unit" id="main-panel">
+    <h1>Semantico Labs</h1>
+    <p>Thoughts, experiments and code from XYZ</p>
+    <p></p>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <a href="/team">
+        <div class="well homebox">
+          <i class="icon-group icon-2x pull-right"></i>
+          <p class="lead">The Team</p>
+          <p class="desc">Meet the crack team of code-monkeys who power the intertubes at Semantico Towers.</p>
+        </div>
+      </a>
+    </div>
+    <div class="span3">
+      <a href="/articles">
+        <div class="well homebox">
+          <i class="icon-rss icon-2x pull-right"></i>
+          <p class="lead">Articles</p>
+          <p class="desc">Read what's happening at HQ: what we're busy with, what we're playing
+          with, and our thinking.</p>
+        </div>
+      </a>
+    </div>
+    <div class="span3">
+      <a href="/projects">
+        <div class="well homebox">
+          <i class="icon-desktop icon-2x pull-right"></i>
+          <p class="lead">Projects</p>
+          <p class="desc">We believe in open source: see our contributions, download our code, tell
+          us what you think.</p>
+        </div>
+      </a>
+    </div>
+    <div class="span3">
+      <a href="/talks">
+        <div class="well homebox">
+          <i class="icon-quote-right icon-2x pull-right"></i>
+          <p class="lead">Talks</p>
+          <p class="desc">Slides, video and writeups of the lectures, seminars and events that our
+          labs team participate in.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="span4">
+    <h2>Featured</h2>
+  </div>
+  <div class="span8">
+    <h2>Latest</h2>
+    {% for page in site.posts limit:5 %}
+      {% include post_item.html %}
+      {% if forloop.last == false %}
+        <hr />
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

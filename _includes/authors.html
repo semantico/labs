@@ -1,0 +1,1 @@
+{% capture authortmpl %}{% for author_page in site.pages %}{% if author_page.layout == 'team' %}{% if page.author == author_page.author %}<a href="{{author_page.url}}">{{author_page.title}}</a>{% endif %}{% endif %}{% endfor %}{% endcapture %}{% if authortmpl != '' %}{{ authortmpl }}{% else %}{{ page.author }}{% endif %}

@@ -1,0 +1,16 @@
+---
+layout: content
+title: The Team
+---
+<h1 class="page-header">{{ page.title }}</h1>
+<div class="row teamrow">
+  {% for page in site.pages %}
+    {% if page.layout == "team" %}
+      <a href="{{ page.url }}" class="span4">
+        <img src="http://pugholder.com/60" />
+        <p class="span3"><span class="lead">{{ page.title }}</span><br/>{{ page.job }}</p>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
