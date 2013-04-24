@@ -25,12 +25,12 @@ layout: empty
 
   <h2>Latest from Semantico Labs</h2>
     {% for page in site.posts limit:5 %}
-      {% cycle 'latestrows1': '<!-- cycle a --><div class="row">', '<!-- cycle b -->' %}
+      {% cycle 'latestrows1': '<div class="row">', '' %}
 
       <div class="span6">
         {% include post_item.html %}
       </div>
-      {% cycle 'latestrows2': '<!-- cycle c -->', '</div><hr/><!-- cycle d -->' %}
+      {% cycle 'latestrows2': '', '</div><hr/>' %}
       {% if forloop.last %}
         {% capture 'odd' %}{{ forloop.length | modulo:2 }}{% endcapture %}
         {% if odd == '1' %}

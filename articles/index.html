@@ -2,12 +2,13 @@
 layout: category
 title: Articles
 is_top_nav: true
-icon: rss
+icon: quote-right
 abstract: "Read what's happening at HQ: what we're busy with, what we're playing with, and our thinking."
 ---
 
+{% for page in site.categories.articles  %}
 <div class="post-list">
-  {% for page in site.categories.articles  %}
-    {% include post_item.html %}
-  {% endfor %}
+  <i class="icon-quote-left icon-2x"></i>
+  {% include post_item.html %}
 </div>
+{% endfor %}

@@ -5,6 +5,7 @@ a:hover { text-decoration: none; }
   color: #fff;
   margin-top: 30px;
 }
+.navbar { margin: 30px 0; }
 
 .homebox .desc { color: #000; }
 .title-info { display: inline-block; }
@@ -16,3 +17,17 @@ a:hover { text-decoration: none; }
 .media h3 { margin-top: 0; }
 
 .slides iframe.thumbnail { width: 100%; min-height: 320px; }
+
+.post-list { position: relative; }
+.post-list i { position: absolute; left: -40px; top: 5px; }
+
+footer { margin-bottom: 20px; }
+
+@media (max-width: 767px) {
+  #main-panel {
+    background: #42607a;
+    padding: 30px;
+  }
+  #main-panel h1 { font-size: 40px; }
+
+}
