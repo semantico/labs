@@ -6,18 +6,18 @@ icon: group
 abstract: Meet the crack team of code-monkeys who power the intertubes at Semantico Towers.
 ---
 <h1 class="page-header">{{ page.title }}</h1>
-<div class="row teamrow">
+<div class="row">
   {% for page in site.pages %}
     {% if page.layout == "team" %}
-      <a href="{{ page.url }}" class="span4">
-        <div class="row">
-          <img src="{{ page.img }}" class="span1" />
-          <p class="span3">
-            <span class="lead">{{ page.title }}</span><br/>
-            {{ page.job }}
-          </p>
-        </div>
-      </a>
+      <div class="span4 team-member">
+        <a href="{{ page.url }}" class="media">
+            <img src="{{ page.img }}" class="pull-left" />
+            <p class="media-body">
+              <span class="lead">{{ page.title }}</span><br/>
+              {{ page.job }}
+            </p>
+        </a>
+      </div>
     {% endif %}
   {% endfor %}
 </div>

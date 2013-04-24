@@ -7,4 +7,12 @@ a:hover { text-decoration: none; }
 }
 
 .homebox .desc { color: #000; }
-.teamrow img { float: left; }
+.title-info { display: inline-block; }
+
+.team-member { margin-bottom: 30px; }
+
+.media .pull-left img { max-width: 120px; }
+.media>.pull-left { margin-right: 20px; }
+.media h3 { margin-top: 0; }
+
+.slides iframe.thumbnail { width: 100%; min-height: 320px; }

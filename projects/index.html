@@ -8,10 +8,20 @@ abstract: "We believe in open source: see our contributions, download our code, 
 <div class="row">
   {% for page in site.pages %}
     {% if page.layout == "project" %}
-      <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}" class="span4">
-        <h3>{{ page.title }}</h3>
-        {{ page.abstract }}
-      </a>
+
+      <div class="span4">
+        <div class="well">
+          <h3>
+            <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}">
+              {{ page.title }}
+            </a>
+          </h3>
+          {{ page.abstract }}<br/>
+          {% if page.www %}
+            <a href="{{ page.www }}"><i class="icon-globe icon-2x"></i></a>
+          {% endif %}
+        </div>
+      </div>
     {% endif %}
   {% endfor %}
 </div>

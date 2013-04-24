@@ -1,19 +1,21 @@
-<article class="row">
+<article class="media">
   {% if page.thumb %}
-    <a href="{{ page.url }}">
-      <img class="span2" src="{{ page.thumb }}"/>
+    <a href="{{ page.url }}" class="pull-left">
+      <img src="{{ page.thumb }}" class="thumbnail"/>
     </a>
   {% endif %}
 
-  <div class="span{% if page.thumb %}4{% else %}6{% endif %}">
-    <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-    {% if page.author %}
-      <small>
-        {% capture authortext %}{% include authors.html %}{% endcapture %}
-        by {{ authortext | strip_newlines }},
+  <div class="media-body">
+    <h3>
+      <a href="{{ page.url }}">{{ page.title }}</a>
+      <small class="title-info">
+        {% if page.author %}
+            {% capture authortext %}{% include authors.html %}{% endcapture %}
+            by {{ authortext | strip_newlines }},
+        {% endif %}
+        {{ page.date | date_to_long_string }}
       </small>
-    {% endif %}
-    <small class="date">{{ page.date | date_to_long_string }}</small>
+    </h3>
     {% if page.categories contains 'articles' %}
       {% if page.abstract %}
         <p>{{ page.abstract }}</p>
