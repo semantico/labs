@@ -12,10 +12,7 @@ layout: content
 </div>
 <h3>Articles and Talks by {{ page.title }}</h3>
 {% assign author_page = page %}
-{% capture list %}{% for page in site.categories.talks %}{% if page.author == author_page.author %}
+{% capture list %}{% for page in site.posts %}{% if page.author == author_page.author %}
   {% include post_item.html %}
-    {% unless forloop.last %}
-      <hr />
-    {% endunless %}
   {% endif %}{% endfor %}{% endcapture %}
 {% if list == '' %}Nothing yet!{% else %}{{ list }}{% endif %}

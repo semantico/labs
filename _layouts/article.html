@@ -25,3 +25,7 @@ layout: content
 
 {{ content }}
 
+<p class="text-right">
+  {% capture authortext %}{% include authors.html %}{% endcapture %}
+  by {{ authortext | strip_newlines }}, {{ page.date | date_to_long_string }}
+</p>
