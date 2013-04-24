@@ -1,12 +1,25 @@
-<article>
-  <h3>{% include post_item_title.html %}</h3>
-  {% if page.categories contains 'articles' %}
-    {% if page.abstract %}
-      <p>{{ page.abstract }}</p>
+<article class="row">
+  {% if page.thumb %}
+    <a href="{{ page.url }}">
+      <img class="span2" src="{{ page.thumb }}"/>
+    </a>
+  {% endif %}
+
+  <div class="span{% if page.thumb %}4{% else %}6{% endif %}">
+    <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+    {% if page.author %}
+      <small>
+        {% capture authortext %}{% include authors.html %}{% endcapture %}
+        by {{ authortext | strip_newlines }},
+      </small>
     {% endif %}
-  {% endif %}
-  {% if page.categories contains 'talks' %}
-    {{ page.content }}
-  {% endif %}
-  <p><a href="{{ page.url }}">Read more</a></p>
+    <small class="date">{{ page.date | date_to_long_string }}</small>
+    {% if page.categories contains 'articles' %}
+      {% if page.abstract %}
+        <p>{{ page.abstract }}</p>
+      {% endif %}
+      {{ page.content }}
+      <p><a href="{{ page.url }}">Read more</a></p>
+    {% endif %}
+  </div>
 </article>

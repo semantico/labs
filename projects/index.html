@@ -1,0 +1,17 @@
+---
+layout: category
+title: Projects
+is_top_nav: true
+icon: desktop
+abstract: "We believe in open source: see our contributions, download our code, tell us what you think."
+---
+<div class="row">
+  {% for page in site.pages %}
+    {% if page.layout == "project" %}
+      <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}" class="span4">
+        <h3>{{ page.title }}</h3>
+        {{ page.abstract }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
