@@ -10,8 +10,13 @@ abstract: Meet the crack team of code-monkeys who power the intertubes at Semant
   {% for page in site.pages %}
     {% if page.layout == "team" %}
       <a href="{{ page.url }}" class="span4">
-        <img src="http://pugholder.com/60" />
-        <p class="span3"><span class="lead">{{ page.title }}</span><br/>{{ page.job }}</p>
+        <div class="row">
+          <img src="{{ page.img }}" class="span1" />
+          <p class="span3">
+            <span class="lead">{{ page.title }}</span><br/>
+            {{ page.job }}
+          </p>
+        </div>
       </a>
     {% endif %}
   {% endfor %}
