@@ -1,0 +1,10 @@
+a:hover { text-decoration: none; }
+
+#main-panel {
+  background: url(/banner.jpg);
+  color: #fff;
+  margin-top: 30px;
+}
+
+.homebox .desc { color: #000; }
+.teamrow img { float: left; }
