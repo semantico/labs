@@ -7,4 +7,3 @@ embed: <script async class="speakerdeck-embed" data-id="35be3b908a6d01307ef12200
 thumb: https://speakerd.s3.amazonaws.com/presentations/35be3b908a6d01307ef122000a9d0020/thumb_slide_0.jpg
 ---
 
-this is dan's talk
