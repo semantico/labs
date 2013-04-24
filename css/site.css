@@ -32,7 +32,17 @@ a:hover { text-decoration: none; }
 
 footer { margin-bottom: 20px; }
 
+.project {
+  position: relative;
+  padding-bottom: 60px;
+  min-height: 130px;
+}
 .project h3 { margin: 0; }
+.project .btn-group {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
 
 @media (max-width: 767px) {
   #main-panel {

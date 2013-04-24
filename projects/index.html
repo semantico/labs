@@ -11,10 +11,14 @@ abstract: "We believe in open source: see our contributions, download our code, 
 
       <div class="span4">
         <div class="well project">
+          {% case page.type %}
+            {% when 'released' %}
+              <span class="label label-success pull-right">Released</span>
+            {% when 'contributed' %}
+              <span class="label label-info pull-right">Contributed</span>
+          {% endcase %}
           <h3>
-            <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}">
-              {{ page.title }}
-            </a>
+            <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a>
           </h3>
           <p>{{ page.abstract }}</p>
           <div class="btn-group">
