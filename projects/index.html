@@ -10,19 +10,19 @@ abstract: "We believe in open source: see our contributions, download our code, 
     {% if page.layout == "project" %}
 
       <div class="span4">
-        <div class="well">
+        <div class="well project">
           <h3>
             <a href="{% if page.href %}{{ page.href }}{% else %}{{ page.url }}{% endif %}">
               {{ page.title }}
             </a>
           </h3>
-          {{ page.abstract }}<br/>
+          <p>{{ page.abstract }}</p>
           <div class="btn-group">
             {% if page.home %}
               <a class="btn" href="{{ page.home }}"><i class="icon-globe"></i> Home</a>
             {% endif %}
             {% if page.code %}
-              <a class="btn" href="{{ page.code }}"><i class="icon-globe"></i> Code</a>
+              <a class="btn" href="{{ page.code }}"><i class="icon-cogs"></i> Code</a>
             {% endif %}
           </div>
         </div>
