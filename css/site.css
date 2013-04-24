@@ -26,6 +26,9 @@ a:hover { text-decoration: none; }
 .post-list { position: relative; }
 .post-list i { position: absolute; left: -40px; top: 5px; }
 
+.post-row { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+.post-row:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+
 footer { margin-bottom: 20px; }
 
 @media (max-width: 767px) {
@@ -35,4 +38,6 @@ footer { margin-bottom: 20px; }
   }
   #main-panel h1 { font-size: 40px; }
 
+  .post-row { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .post-row .media { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #eee; }
 }
