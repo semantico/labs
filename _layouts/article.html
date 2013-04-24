@@ -13,19 +13,14 @@ layout: content
   <p class="lead">
     {{ page.abstract }}
   </p>
-  <p class="muted">
-    {% if page.author %}
-      {% include authors.html %}
-      <br />
-    {% endif %}
-    {{ page.date | date_to_long_string }}
-  </p>
-  <hr />
 {% endif %}
+<p class="muted">
+  {% if page.author %}
+    {% include authors.html %}
+    <br />
+  {% endif %}
+  {{ page.date | date_to_long_string }}
+</p>
+<hr />
 
 {{ content }}
-
-<p class="text-right">
-  {% capture authortext %}{% include authors.html %}{% endcapture %}
-  by {{ authortext | strip_newlines }}, {{ page.date | date_to_long_string }}
-</p>
