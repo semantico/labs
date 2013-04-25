@@ -8,13 +8,6 @@
   <div class="media-body">
     <h3>
       <a href="{{ page.url }}">{{ page.title }}</a>
-      <small class="title-info">
-        {% if page.author %}
-            {% capture authortext %}{% include authors.html %}{% endcapture %}
-            by {{ authortext | strip_newlines }},
-        {% endif %}
-        {{ page.date | date_to_long_string }}
-      </small>
     </h3>
     {% if page.abstract %}
       <p>{{ page.abstract }}</p>
@@ -22,5 +15,12 @@
     {% if page.layout == 'talk' %}
       <p>{{ page.content }}</p>
     {% endif %}
+    <small class="muted">
+      {% if page.author %}
+          {% capture authortext %}{% include authors.html %}{% endcapture %}
+          {{ authortext | strip_newlines }},
+      {% endif %}
+      {{ page.date | date_to_long_string }}
+    </small>
   </div>
 </article>
