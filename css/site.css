@@ -2,8 +2,11 @@
 ---
 {% include css/bootstrap.css %}
 {% include css/font-awesome.css %}
-
-a:hover { text-decoration: none; }
+a { color: #636363; }
+a:hover {
+  color: #4F4F4F;
+  text-decoration: none;
+}
 
 #main-panel {
   background: url(/img/header.jpg);
