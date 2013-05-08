@@ -14,15 +14,17 @@ a:hover { text-decoration: none; }
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#main-panel h1 {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+@media (min-width: 768px) {
+  #main-panel h1 {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
 }
 #main-panel p {
   font-weight: bold;
