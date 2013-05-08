@@ -68,6 +68,7 @@ footer { margin-bottom: 20px; }
 @media (max-width: 767px) {
   #main-panel {
     background: #42607a;
+    color: #fff;
     padding: 30px;
   }
   #main-panel h1 { font-size: 40px; }
