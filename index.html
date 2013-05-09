@@ -26,19 +26,21 @@ layout: empty
     {% endfor %}
   </div>
 
-  <h2>Latest from Semantico Labs</h2>
-    {% for page in site.posts limit:10 %}
-      {% cycle 'latestrows1': '<div class="post-row"><div class="row">', '' %}
+  <section class="latest">
+    <h2>Latest from Semantico Labs</h2>
+      {% for page in site.posts limit:10 %}
+        {% cycle 'latestrows1': '<div class="post-row"><div class="row">', '' %}
 
-      <div class="span6">
-        {% include post_item.html %}
-      </div>
-      {% cycle 'latestrows2': '', '</div></div>' %}
-      {% if forloop.last %}
-        {% capture 'odd' %}{{ forloop.length | modulo:2 }}{% endcapture %}
-        {% if odd == '1' %}
-          </div></div>
+        <div class="span6">
+          {% include post_item.html %}
+        </div>
+        {% cycle 'latestrows2': '', '</div></div>' %}
+        {% if forloop.last %}
+          {% capture 'odd' %}{{ forloop.length | modulo:2 }}{% endcapture %}
+          {% if odd == '1' %}
+            </div></div>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+    </section>
   </div>
