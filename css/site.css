@@ -73,6 +73,21 @@ p a {
   color: #636363;
 }
 
+#expanded:target .nav-collapse {
+  height: auto;
+}
+
+.navbar .btn-contract {
+  display: none;
+}
+#expanded:target .btn-contract {
+  display: block;
+}
+
+#expanded:target .btn-expand {
+  display: none;
+}
+
 .latest {
   margin-top: 20px;
 }
