@@ -3,7 +3,40 @@
 {% include css/bootstrap.css %}
 {% include css/font-awesome.css %}
 
-a { color: #636363; }
+h1.page-header {
+  margin-bottom: 40px;
+}
+
+section.content {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 200;
+}
+
+section.content p {
+  margin: 0 0 15px;
+}
+
+code {
+  color: rgb(250, 144, 0);
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+}
+
+pre, pre code {
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+}
+
+hr.abstract {
+  margin: 0 0 40px 0;
+}
+
+a {
+  color: #636363;
+}
 a:hover {
   color: #4F4F4F;
   text-decoration: none;
@@ -34,9 +67,8 @@ a:hover {
   box-shadow: inset 1px 0px 1px rgba(0, 0, 0, 0.05);
 }
 
-.latest h2 {
-  text-align: center;
-  margin-bottom: 25px;
+.latest {
+  margin-top: 20px;
 }
 
 #main-panel {
@@ -64,9 +96,12 @@ a:hover {
 
 .team-member { margin-bottom: 30px; }
 
-.media .pull-left img { max-width: 120px; }
-.media>.pull-left { margin-right: 20px; }
 .media h3 { margin-top: 0; }
+.thumb {
+  max-width: 170px;
+  max-height: 170px;
+  margin-right: 20px;
+}
 
 .slides iframe.thumbnail { width: 100%; min-height: 320px; }
 
@@ -105,8 +140,4 @@ footer { margin-bottom: 20px; }
 
 footer {
   color: #999;
-}
-
-.muted {
-  color: #bbb;
 }

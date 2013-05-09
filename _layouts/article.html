@@ -2,10 +2,6 @@
 layout: content
 ---
 
-<p class="muted">This is an article from
-  <a href="/">Semantico Labs</a>, the R&amp;D department of the
-  <a href="http://semantico.com">digital publishing solutions company</a>.
-</p>
 
 <h1 class="page-header">{{ page.title }}</h1>
 
@@ -14,13 +10,21 @@ layout: content
     {{ page.abstract }}
   </p>
 {% endif %}
+
 <p class="muted">
   {% if page.author %}
     {% include authors.html %}
-    <br />
   {% endif %}
   {{ page.date | date_to_long_string }}
-</p>
-<hr />
 
-{{ content }}
+  <br />
+
+  This is an article from <a href="/">Semantico Labs</a>,
+  the R&amp;D department of the <a href="http://semantico.com">digital publishing solutions company</a>.
+</p>
+
+<hr class="abstract" />
+
+<section class="content">
+  {{ content }}
+</section>
