@@ -19,13 +19,13 @@ section.content p {
 
 code {
   color: rgb(250, 144, 0);
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 0;
 }
 
 pre, pre code {
-  font-size: 14px;
+  font-size: 12px;
   border: none;
   border-radius: 0;
 }
@@ -34,12 +34,13 @@ hr.abstract {
   margin: 0 0 40px 0;
 }
 
-a {
+a, a:hover {
   color: #636363;
-}
-a:hover {
-  color: #4F4F4F;
   text-decoration: none;
+}
+
+p a {
+  text-decoration: underline;
 }
 
 .well {
@@ -103,9 +104,12 @@ a:hover {
   margin-right: 20px;
 }
 
-.slides iframe.thumbnail { width: 100%; min-height: 320px; }
+.slides iframe {
+  width: 100%;
+  min-height: 600px;
+}
 
-.post-list { position: relative; }
+.post-list { position: relative; margin-bottom: 30px; }
 .post-list i { position: absolute; left: -40px; top: 5px; }
 
 .post-row { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }

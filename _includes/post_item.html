@@ -10,10 +10,7 @@
       <a href="{{ page.url }}">{{ page.title }}</a>
     </h3>
     {% if page.abstract %}
-      <p>{{ page.abstract }}</p>
-    {% endif %}
-    {% if page.layout == 'talk' %}
-      <p>{{ page.content }}</p>
+      <a href="{{ page.url }}">{{ page.abstract }}</a>
     {% endif %}
     <small class="muted">
       {% if page.author %}

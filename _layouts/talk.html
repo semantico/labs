@@ -1,26 +1,8 @@
 ---
-layout: content
+layout: article
 ---
-
-<p class="muted">This is a talk from
-  <a href="/">Semantico Labs</a>, the R&amp;D department of the
-  <a href="http://semantico.com">digital publishing solutions company</a>.
-</p>
-
-<h1 class="page-header">{{ page.title }}</h1>
-<div class="row-fluid">
-  <div class="span8 slides">{{ page.embed }}</div>
-  <div class="span4">
-    <div class="lead">
-      {{ content }}
-    </div>
-    <p class="muted">
-      {% if page.author %}
-        {% include authors.html %}
-        <br />
-      {% endif %}
-      {{ page.date | date_to_long_string }}
-    </p>
-  </div>
+{{ content }}
+<div class="slides">
+  {{ page.embed }}
 </div>
 
