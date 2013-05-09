@@ -7,18 +7,22 @@ layout: empty
     <p>Thoughts, experiments, and code from Semantico's R&amp;D department</p>
   </div>
   <div class="row">
-    {% for page in site.pages %}
-      {% if page.is_top_nav %}
-        <div class="span3">
-          <a href="{{ page.url }}">
-            <div class="well homebox">
-              <i class="icon-{{ page.icon }} icon-2x pull-right"></i>
-              <p class="lead">{{ page.title }}</p>
-              <p class="desc">{{ page.abstract }}</p>
+    {% for n in (1..4) %}
+      {% for page in site.pages %}
+        {% if page.is_top_nav %}
+          {% if page.order == n %}
+            <div class="span3">
+              <a href="{{ page.url }}">
+                <div class="well homebox">
+                  <i class="icon-{{ page.icon }} icon-2x pull-right"></i>
+                  <p class="lead">{{ page.title }}</p>
+                  <p class="desc">{{ page.abstract }}</p>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-      {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     {% endfor %}
   </div>
 

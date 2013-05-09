@@ -15,10 +15,14 @@ layout: empty
             <a class="brand" href="/">Semantico Labs</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-                {% for page in site.pages %}
-                  {% if page.is_top_nav %}
-                    <li><a href="{{ page.url }}"><i class="icon-{{ page.icon }}"></i> {{ page.title }}</a></li>
-                  {% endif %}
+                {% for n in (1..4) %}
+                  {% for page in site.pages %}
+                    {% if page.is_top_nav %}
+                      {% if page.order == n %}
+                        <li><a href="{{ page.url }}"><i class="icon-{{ page.icon }}"></i> {{ page.title }}</a></li>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
                 {% endfor %}
               </ul>
             </div>
