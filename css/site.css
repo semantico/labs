@@ -73,6 +73,10 @@ p a {
   color: #636363;
 }
 
+.navbar .brand {
+  padding-bottom: 0;
+}
+
 #expanded:target .nav-collapse {
   height: auto;
 }
@@ -94,6 +98,8 @@ p a {
 
 #main-panel {
   background: url(/img/header.jpg);
+  background-position: top right;
+  background-size: cover;
   padding: 89px 20px 60px;
   height: 238px;
   margin-top: 30px;
