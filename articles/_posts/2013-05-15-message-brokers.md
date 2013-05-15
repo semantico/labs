@@ -7,13 +7,20 @@ author: edwinwilson
 
 # Message brokers
 
-A message broker is a physical component that handles communication between applications. Instead of communicating with each other, applications communicate only with the message broker. An application sends a message to the message broker, providing the logical name of the receivers. The message broker looks up applications registered under the logical name and then passes the message to them.
+A message broker is a physical component that handles communication between applications.
+Instead of communicating with each other, applications communicate only with the message broker.
+An application sends a message to the message broker, providing the logical name of the receivers.
+The message broker looks up applications registered under the logical name and then passes the message to them.
 
-Communication between applications involves only the sender, the message broker, and the designated receivers. The message broker does not send the message to any other applications. (http://msdn.microsoft.com/en-us/library/ff648849.aspx)
+Communication between applications involves only the sender, the message broker, and the designated receivers.
+The message broker does not send the message to any other applications. 
+(http://msdn.microsoft.com/en-us/library/ff648849.aspx)
 
-Message brokers may support different ways of dispatching messages to their consumers, for example by using either a queue or a topic.
+Message brokers may support different ways of dispatching messages to their consumers,
+for example by using either a queue or a topic.
 
-The topics and queues are hosted on a message broker, messages are sent from sender clients to these queues and topics then dispatched in the appropriate way to the appropriate receiver clients.
+The topics and queues are hosted on a message broker,
+messages are sent from sender clients to these queues and topics then dispatched in the appropriate way to the appropriate receiver clients.
 
 ### Consumers
 A consumer is a client which is capable of receiving messages from a topic or a queue.
@@ -27,36 +34,51 @@ A client capable of subscribing to and receiving messages from a topic.
 A publisher is a client capable of sending messages to a queue or topic.
 
 ### Topics
-A topic receives a message, then immediately dispatches it to all subscribers that are "active" at the time. A subscriber is said to be active when it's receive method is running.
+A topic receives a message, then immediately dispatches it to all subscribers that are "active" at the time.
+A subscriber is said to be active when it's receive method is running.
 
 ### Durable subscribers
-A durable subscriber will receive all messages from a topic even if the message has been sent to the basic subscribers already and the durable subscriber was inactive at the time. When a topic has a durable subscriber, it keeps messages received from the publishers until they have been dispatched to all durable subscribers, then disposes of them.
+A durable subscriber will receive all messages from a topic,
+even if the message has been sent to the basic subscribers already and the durable subscriber was inactive at the time.
+When a topic has a durable subscriber, it keeps messages received from the publishers until they have been dispatched to all durable subscribers,
+then disposes of them.
 
 ### Queues
-A queue keeps a message until one of it's consumers retrieves it, a single message will be received by exactly one consumer. If there are no consumers available at the time the message is sent, the message will be kept until a consumer is available that can process 
-it.
+A queue keeps a message until one of it's consumers retrieves it, a single message will be received by exactly one consumer.
+If there are no consumers available at the time the message is sent, the message will be kept until a consumer is available that can process it.
 
 ### Durable queues
-Durable queues keep messages around persistently for any suitable consumer to consume them. Durable queues do not need to concern themselves with which consumer is going to consume the messages at some point in the future. There is just one copy of a message that any consumer in the future can consume.(http://activemq.apache.org/how-do-durable-queues-and-topics-work.html)
+Durable queues keep messages around persistently for any suitable consumer to consume them.
+Durable queues do not need to concern themselves with which consumer is going to consume the messages at some point in the future.
+There is just one copy of a message that any consumer in the future can consume.(http://activemq.apache.org/how-do-durable-queues-and-topics-work.html)
 
 # General message broker functionalities
 
 ### Flow control
 
-Flow control is used to limit the flow of data between a client and server, or a server and another server in order to prevent the client or server being overwhelmed with data.(http://docs.jboss.org/hornetq/2.2.14.Final/user-manual/en/html/flow-control.html)
+Flow control is used to limit the flow of data between a client and server,
+or a server and another server in order to prevent the client or server being overwhelmed with data.
+(http://docs.jboss.org/hornetq/2.2.14.Final/user-manual/en/html/flow-control.html)
 Consumer or producer flow control is possible depending on what broker is being used.
 
 ### Persistent and non persistent messaging
 
-If you are using persistent delivery, messages are persisted to disk/database so that they will survive a broker restart. When using non-persistent delivery, if you kill a broker then you will lose all in-transit messages.
-The effect of this difference is that persistent messaging is usually slower than non-persistent delivery.(http://activemq.apache.org/what-is-the-difference-between-persistent-and-non-persistent-delivery.html)
+If you are using persistent delivery, messages are persisted to disk/database so that they will survive a broker restart.
+When using non-persistent delivery, if you kill a broker then you will lose all in-transit messages.
+The effect of this difference is that persistent messaging is usually slower than non-persistent delivery.
+(http://activemq.apache.org/what-is-the-difference-between-persistent-and-non-persistent-delivery.html)
 
 ### Queue replication
 
-Queue replication's purpose is to provide backup for a queue in case of failure from a broker by replicating a used queue on a primary broker to a backup broker. The queue that will be replicated triggers events when messages are enqueued or dequeued. A queue with the purpose of being a backup queue is created on the backup broker. The events are sent to the backup broker and allow it to update the backup queue. In the event of the primary broker not responding, clients can failover to the backup broker.
+Queue replication's purpose is to provide backup for a queue in case of failure from a broker by replicating a used queue on a primary broker to a backup broker.
+The queue that will be replicated triggers events when messages are enqueued or dequeued.
+A queue with the purpose of being a backup queue is created on the backup broker.
+The events are sent to the backup broker and allow it to update the backup queue.
+In the event of the primary broker not responding, clients can failover to the backup broker.
 
 ### Message store and forward
-Store and forward of messages works in a cluster of brokers. Messages sent to a broker are passed on from broker to broker inside the cluster until there is a consumer available to consume them.
+Store and forward of messages works in a cluster of brokers.
+Messages sent to a broker are passed on from broker to broker inside the cluster until there is a consumer available to consume them.
 
 ### Message TTL
 A TTL defining how long a message is kept on a queue or topic before it is deleted can be set.
@@ -70,7 +92,7 @@ A consumer can be set to ignore certain messages by using message filtering.
 
 # ActiveMQ
 
-ActiveMQ is a popular open-source message broker developed by the Apache foundation.
+ActiveMQ is a popular open-source message broker supported by the Apache foundation.
 It is written in and closely linked with Java and fully implements JMS.
 It is widely used and supported.
 
@@ -80,15 +102,21 @@ ActiveMQ is entirely exploitable by using Java code and configuration files.
 
 ### Networks of brokers
 
-It is possible with ActiveMQ to configure broker networks. These networks allow you to manage the number of clients per broker and to survive the failure of a particular broker (a client can fail over to a broker of the same network in case of failure of it's own broker).
-They enable support of distributed queues and topics across a network (a consumer on a broker from a network can receive messages from a queue or topic from a different broker on the same network).
+It is possible with ActiveMQ to configure broker networks.
+These networks allow you to manage the number of clients per broker and to survive the failure of a particular broker
+(a client can fail over to a broker of the same network in case of failure of it's own broker).
+They enable support of distributed queues and topics across a network 
+(a consumer on a broker from a network can receive messages from a queue or topic from a different broker on the same network).
 Messages will only be forwarded to brokers which have consumers attached to them.
 
 ### Master/slave brokers
 
-The problem with running lots of stand alone brokers or brokers in a network is that messages are owned by a single physical broker at any point in time. If that broker goes down, you have to wait for it to be restarted before the message can be delivered. (If you are using non-persistent messaging and a broker goes down you generally lose your message).
+The problem with running lots of stand alone brokers or brokers in a network is that messages are owned by a single physical broker at any point in time.
+If that broker goes down, you have to wait for it to be restarted before the message can be delivered.
+(If you are using non-persistent messaging and a broker goes down you generally lose your message).
 
-The idea behind MasterSlave is that messages are replicated to a slave broker so that even if you have catastrophic hardware failure of the master's machine, file system or data centre, you get immediate failover to the slave with no message loss.
+The idea behind MasterSlave is that messages are replicated to a slave broker so that even if you have catastrophic hardware failure of the master's machine,
+file system or data centre, you get immediate failover to the slave with no message loss.
 (http://activemq.apache.org/clustering.html)
 
 ActiveMQ supports :
@@ -133,7 +161,7 @@ The process for receiving large messages is exactly the same as for receiving or
 
 Apollo seems to be a much faster and more reliable broker than ActiveMQ.
 It is based on ActiveMQ, but it has been developed in Scala and the threading sections have been rethought.
-Whereas, it has less features, no broker networks, no embedded Java deployment.
+Whereas, it has less features, for example no broker networks.
 But it has new exclusive features like the REST management API, message sequences, runtime configuration updates.
 Also, it supports less protocols, STOMP, AMQP, MQTT and OpenWire are the only one are the only ones supported at the moment.
 Most of the functionalities that can be found in ActiveMQ should be implemented in Apollo in the future.
@@ -248,7 +276,8 @@ Producer rates example : persistent, 5 consumers, 10 producers, 1 queue.
 
 ##### Topic
 ##### Non Persistent
-Apollo has much better consumer and producer rates than the rest, ActiveMQ second (e.g. : 1 topic, 10 consumers, 10 producers : Apollo 957,677 msg/second, ActiveMQ 353,283 msg/second, RabbitMQ 20997 msg/second, HornetQ 0msg/second)
+Apollo has much better consumer and producer rates than the rest, ActiveMQ second.
+(e.g. : 1 topic, 10 consumers, 10 producers : Apollo 957,677 msg/second, ActiveMQ 353,283 msg/second, RabbitMQ 20997 msg/second, HornetQ 0msg/second)
 ##### Persistent
 Apollo and ActiveMQ ahead of RabbitMQ and HornetMQ with increasing gap when number of producers is higher. ActiveMQ nearly as fast as Apollo.
 
@@ -315,7 +344,11 @@ Same as non persistent.
 
 ### Request/reply scenarios
 
-In this scenario producers send a request message with a 20 byte body to a queue the consumers are subscribed to and then waits for response on a queue unique to each producer. The request message has the `reply-to` header set to the queue which the producer is will wait for the response on. Consumers are receive the request message and send a response message without a body to the `reply-to` queue specified on the request. The 99.9th percentile latency is measured using the time elapsed from when the producer sends the request message to when the producer receives the response message. 
+In this scenario producers send a request message with a 20 byte body to a queue the consumers are subscribed to
+and then waits for response on a queue unique to each producer.
+The request message has the `reply-to` header set to the queue which the producer is will wait for the response on.
+Consumers are receive the request message and send a response message without a body to the `reply-to` queue specified on the request.
+The 99.9th percentile latency is measured using the time elapsed from when the producer sends the request message to when the producer receives the response message. 
 
 #### Queue
 ##### Non persistent
