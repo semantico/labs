@@ -170,3 +170,8 @@ footer { margin-bottom: 20px; }
 footer {
   color: #999;
 }
+
+.gist {
+  font-size: 12px;
+  line-height: 18px;
+}
