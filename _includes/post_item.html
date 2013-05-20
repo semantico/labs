@@ -10,7 +10,7 @@
       <a href="{{ page.url }}">{{ page.title }}</a>
     </h3>
     {% if page.abstract %}
-      <a href="{{ page.url }}">{{ page.abstract }}</a>
+      {{ page.abstract }}
     {% endif %}
     <small class="muted">
       {% if page.author %}
