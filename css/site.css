@@ -29,6 +29,12 @@ hr {
   margin: 28px 0;
 }
 
+dt, dd {
+  line-height: 19px;
+  margin-top: 19px;
+}
+dd + dd { margin-top: 0; }
+
 h1.page-header {
   padding: 0;
   margin: 28px 0;
