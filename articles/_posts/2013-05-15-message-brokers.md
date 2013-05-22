@@ -3,6 +3,7 @@ layout: article
 category: articles
 title: Message brokers
 author: edwinwilson
+abstract: Interested in using message queues in our publishing systems, we sent intern developer Edwin to investigate what's out there in the Java Messaging world. Here's&nbsp;his&nbsp;report.
 ---
 
 # Message brokers
