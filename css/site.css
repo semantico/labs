@@ -199,14 +199,24 @@ footer p + p { text-indent: 0; }
 
 .project {
   position: relative;
-  padding-bottom: 60px;
-  min-height: 130px;
+  padding-bottom: 28px;
+  min-height: 168px;
 }
-.project h3 { margin: 0; }
+.project h3 {
+  line-height: 28px;
+  margin: 0;
+}
+.project p {
+  margin: 19px 0;
+  line-height: 19px;
+}
 .project .btn-group {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 28px;
+  bottom: 28px;
+}
+.project .btn-group a {
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
