@@ -8,12 +8,12 @@ h1.page-header {
 }
 
 section.content {
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 200;
+  font-size: 17px;
+  line-height: 28px;
 }
 
 section.content p {
+  font-family: "Georgia";
   margin: 0 0 15px;
 }
 
