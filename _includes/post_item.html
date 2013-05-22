@@ -12,12 +12,14 @@
     {% if page.abstract %}
       {{ page.abstract }}
     {% endif %}
-    <small class="muted">
-      {% if page.author %}
+    <p class="muted">
+      <small>
+        {% if page.author %}
           {% capture authortext %}{% include authors.html %}{% endcapture %}
           {{ authortext | strip_newlines }},
-      {% endif %}
-      {{ page.date | date_to_long_string }}
-    </small>
+        {% endif %}
+        {{ page.date | date_to_long_string }}
+      </small>
+    </p>
   </div>
 </article>

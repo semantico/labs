@@ -11,11 +11,11 @@ layout: empty
       {% for page in site.pages %}
         {% if page.is_top_nav %}
           {% if page.order == n %}
-            <div class="span3">
+            <div class="span3 homebox">
               <a href="{{ page.url }}">
-                <div class="well homebox">
+                <div class="well">
                   <i class="icon-{{ page.icon }} icon-2x pull-right"></i>
-                  <p class="lead">{{ page.title }}</p>
+                  <h2 class="lead">{{ page.title }}</h2>
                   <p class="desc">{{ page.abstract }}</p>
                 </div>
               </a>
