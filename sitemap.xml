@@ -4,7 +4,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- home -->
   <url>
-    <loc>{{ site.baseurl }}</loc>
+    <loc>http://labs.semantico.com/</loc>
   </url>
 
   <!-- pages -->
@@ -12,7 +12,7 @@
     {% if page.layout != nil %}
       {% if page.url != '/index.html' %}
         <url>
-          <loc>{{ site.baseurl }}{{ page.url }}</loc>
+          <loc>http://labs.semantico.com{{ page.url }}</loc>
         </url>
       {% endif %}
     {% endif %}
@@ -21,7 +21,7 @@
   <!-- posts -->
   {% for post in site.posts %}
     <url>
-      <loc>{{ site.baseurl }}{{ post.url }}</loc>
+      <loc>http://labs.semantico.com{{ post.url }}</loc>
     </url>
   {% endfor %}
 </urlset>
