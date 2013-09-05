@@ -4,10 +4,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>Semantico Labs</title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
+  <link href="http://labs.semantico.com/atom.xml" rel="self"/>
+  <link href="http://labs.semantico.com/"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <id>http://labs.semantico.com/</id>
   <author>
     <name>Semantico</name>
     <email>info@semantico.com</email>
@@ -16,10 +16,12 @@
   {% for post in site.posts limit: 20 %}
     <entry>
       <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-      <link href="{{site.url}}{{ post.url }}"/>
+    <link href="http://labs.semantico.com{{ post.url }}"/>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <id>{{ site.url }}{{ post.id }}</id>
-      <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+      <id>http://labs.semantico.com{{ post.id }}</id>
+      {% if post.content != '' %}
+        <content type="html"><![CDATA[{{ post.content | cdata_escape }}]]></content>
+      {% endif %}
     </entry>
   {% endfor %}
 
